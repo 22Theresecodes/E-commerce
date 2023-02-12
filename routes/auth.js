@@ -50,8 +50,8 @@ router.post("/login", async (req, res) => {
     if (incominguser && isPasswordCorrect) {
         const accessToken = jwt.sign(
             {
-            id:user.id,
-            isAdmin:user.isAdmin
+            id:incominguser._id,
+            isAdmin:incominguser.isAdmin
           },
           process.env.JWT_SEC,
           {expiresIn:"2d"}

@@ -14,11 +14,11 @@ const OrderSchema = new mongoose.Schema({
             },
         ], 
         amount:{type:Number, required:true},
-        address:{type:Object, required:true},
+        address:{type:String, required:true},
         status: {type:String, default: "pending"}
    
  },
  { timestamps: true }
 )
 
-module.exports = mongoose.model("Cart", OrderSchema)
+module.exports = mongoose.model("Order", OrderSchema)
